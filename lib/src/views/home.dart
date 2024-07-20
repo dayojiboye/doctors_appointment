@@ -1,9 +1,10 @@
 import 'package:doctors_appointment/src/utils/margin.dart';
 import 'package:doctors_appointment/src/utils/theme.dart';
 import 'package:doctors_appointment/src/widgets/appointment_card.dart';
+import 'package:doctors_appointment/src/widgets/category.dart';
+import 'package:doctors_appointment/src/widgets/nearest_doctor_card.dart';
 import 'package:doctors_appointment/src/widgets/search_input.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -35,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
             bottom: 50,
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,7 +73,31 @@ class _HomeScreenState extends State<HomeScreen> {
               const YMargin(32),
               const AppointmentCard(),
               const YMargin(20),
-              SearchInput(controller: searchTextController)
+              SearchInput(controller: searchTextController),
+              const YMargin(24),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Category(icon: "assets/icons/sun.svg", label: "Covid 19"),
+                  Category(
+                      icon: "assets/icons/profile-add.svg", label: "Doctor"),
+                  Category(
+                      icon: "assets/icons/medicine.svg", label: "Medicine"),
+                  Category(
+                      icon: "assets/icons/hospital.svg", label: "Hospital"),
+                ],
+              ),
+              const YMargin(32),
+              const Text(
+                "Near Doctor",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: kHeader,
+                ),
+              ),
+              const YMargin(16),
+              const NearestDoctorCard(),
             ],
           ),
         ),

@@ -1,19 +1,30 @@
 import 'package:doctors_appointment/src/utils/margin.dart';
 import 'package:doctors_appointment/src/utils/theme.dart';
 import 'package:flutter/material.dart';
-import "package:flutter_svg/flutter_svg.dart";
+import 'package:flutter_svg/flutter_svg.dart';
 
-class AppointmentCard extends StatelessWidget {
-  const AppointmentCard({super.key});
+class NearestDoctorCard extends StatelessWidget {
+  const NearestDoctorCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
       child: Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 20,
+        ),
         decoration: const BoxDecoration(
-          color: kDeepBlue,
+          color: kWhite,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 20,
+              color: Color.fromRGBO(90, 117, 167, 0.04),
+              spreadRadius: 0,
+              offset: Offset(2, 12),
+            )
+          ],
           borderRadius: BorderRadius.all(
             Radius.circular(12),
           ),
@@ -24,75 +35,87 @@ class AppointmentCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "assets/images/imran.png",
+                      "assets/images/joseph.png",
                       width: 48,
                       height: 48,
                     ),
-                    const XMargin(12),
+                    const XMargin(10),
                     const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Dr. Imran Syahir",
+                          "Dr. Joseph Brostito",
                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: kWhite,
                             fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            overflow: TextOverflow.ellipsis,
+                            color: kHeader,
                           ),
                         ),
-                        YMargin(4),
+                        YMargin(8),
                         Text(
-                          "General Doctor",
+                          "Dental Specialist",
                           style: TextStyle(
+                            color: kPrimary,
                             fontSize: 14,
-                            color: Color(0XFFCBE1FF),
                           ),
                         )
                       ],
                     )
                   ],
                 ),
-                SvgPicture.asset("assets/icons/chevron-right.svg"),
+                Row(
+                  children: [
+                    SvgPicture.asset("assets/icons/location.svg"),
+                    const XMargin(8),
+                    const Text(
+                      "1.2 KM",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: kPrimary,
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
-            const YMargin(16),
+            const YMargin(20.5),
             const Divider(
-              color: Color.fromRGBO(255, 255, 255, 0.15),
+              color: Color(0XFFF5F5F5),
               thickness: 1,
             ),
-            const YMargin(16),
+            const YMargin(20.5),
             Row(
               children: [
                 Row(
                   children: [
-                    SvgPicture.asset("assets/icons/calendar-white.svg"),
-                    const XMargin(8),
+                    SvgPicture.asset("assets/icons/clock-orange.svg"),
+                    const XMargin(6),
                     const Text(
-                      "Sunday, 12 June",
+                      "4,8 (120 Reviews)",
                       style: TextStyle(
-                        color: kWhite,
                         fontSize: 12,
+                        color: kOrange,
                       ),
                     )
                   ],
                 ),
-                const XMargin(30),
+                const XMargin(25.5),
                 Row(
                   children: [
-                    SvgPicture.asset("assets/icons/clock-white.svg"),
-                    const XMargin(8),
+                    SvgPicture.asset("assets/icons/clock-blue.svg"),
+                    const XMargin(6),
                     const Text(
-                      "11:00 - 12:00 AM",
+                      "Open at 17.00",
                       style: TextStyle(
-                        color: kWhite,
                         fontSize: 12,
+                        color: kDeepBlue,
                       ),
                     )
                   ],
-                ),
+                )
               ],
             )
           ],
