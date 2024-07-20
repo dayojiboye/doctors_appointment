@@ -1,6 +1,6 @@
 # Doctors Appointment
 
-An app for patients to schedule appointments and chat with doctors and medical professionals.
+A healthcare app concept for patients to schedule appointments and chat with doctors and other medical professionals.
 
 ## Screenshots
 
