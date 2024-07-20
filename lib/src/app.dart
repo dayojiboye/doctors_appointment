@@ -1,5 +1,7 @@
 import "package:doctors_appointment/src/utils/theme.dart";
+import "package:doctors_appointment/src/views/home.dart";
 import "package:flutter/material.dart";
+import "package:google_fonts/google_fonts.dart";
 import "package:google_nav_bar/google_nav_bar.dart";
 import "package:flutter_svg/flutter_svg.dart";
 
@@ -31,7 +33,7 @@ class _MyAppState extends State<MyApp> {
         return const Center(child: Text("Profile"));
 
       default:
-        return const Center(child: Text("Home"));
+        return const HomeScreen();
     }
   }
 
@@ -50,6 +52,7 @@ class _MyAppState extends State<MyApp> {
               BoxShadow(
                 blurRadius: 1,
                 color: Color(0XFFF6F6F6),
+                spreadRadius: 1,
               )
             ],
           ),
@@ -62,6 +65,11 @@ class _MyAppState extends State<MyApp> {
               child: GNav(
                 rippleColor: Colors.transparent,
                 hoverColor: Colors.transparent,
+                textStyle: TextStyle(
+                  fontFamily: GoogleFonts.nunito().fontFamily,
+                  fontWeight: FontWeight.bold,
+                  color: kLightBlue,
+                ),
                 gap: 8,
                 activeColor: kLightBlue,
                 iconSize: 24,
