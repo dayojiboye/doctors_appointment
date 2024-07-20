@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
             top: 20,
             left: 24,
             right: 24,
-            bottom: 50,
+            bottom: 25,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,5 +1,6 @@
 import "package:doctors_appointment/src/utils/theme.dart";
 import "package:doctors_appointment/src/views/home.dart";
+import "package:doctors_appointment/src/views/schedule.dart";
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 import "package:google_nav_bar/google_nav_bar.dart";
@@ -24,13 +25,13 @@ class _MyAppState extends State<MyApp> {
   Widget renderWidgetBasedOnIndex() {
     switch (currentRouteIndex) {
       case 1:
-        return const Center(child: Text("Schedule"));
+        return const ScheduleScreen();
 
       case 2:
-        return const Center(child: Text("Message"));
+        return const Center(child: Text("Message Screen"));
 
       case 3:
-        return const Center(child: Text("Profile"));
+        return const Center(child: Text("Profile Screen"));
 
       default:
         return const HomeScreen();
